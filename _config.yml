@@ -13,12 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: SASE 2025-2026 Mentorship Profiles
+title: SASE 2026-2027 Mentorship Profiles
 email: sase.drexel.webmaster0@gmail.com
 author: Ryan Widjaja
 description: >- # this means to ignore newlines until "baseurl:"
-  Profiles for SASE Drexel's 2025-2026 mentorship program.
-baseurl: "/mentorship-2025" # the subpath of your site, e.g. /blog
+  Profiles for SASE Drexel's 2026-2027 mentorship program.
+baseurl: "/mentorship-2026" # the subpath of your site, e.g. /blog
 url: "https://sase-drexel.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 include: ["_pages"]
 twitter_username: jekyllrb
