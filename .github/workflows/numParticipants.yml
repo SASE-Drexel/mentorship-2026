@@ -1,0 +1,30 @@
+name: Output the number of participants, mentors, and mentees
+
+on:
+	push:
+		branches: ["main"]
+
+permissions:
+	contents: write
+
+jobs:
+	run-numParticipants:
+		runs-on: ubuntu-latest
+		
+		steps:
+			- name: Check out
+			  uses: actions/checkout@v4
+			- name: Add exec permissions
+			  run: |
+				chmod +x ./_bash/*
+			- name: Write to output
+			  run: |
+				cd _bash
+				bash ./outNumPar textFile
+			- name: Commit output
+			  run: |
+				git add textFile.txt
+				if ! git diff --cached --quiet; then
+	git commit -m "Updated number of participants"
+	git push
+fi
