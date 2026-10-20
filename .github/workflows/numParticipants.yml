@@ -25,6 +25,6 @@ jobs:
 			  run: |
 				git add textFile.txt
 				if ! git diff --cached --quiet; then
-	git commit -m "Updated number of participants"
-	git push
+					git commit -m "Updated number of participants"
+					git push
 fi
