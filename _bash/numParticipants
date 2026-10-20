@@ -1,0 +1,28 @@
+#!/bin/bash
+#	numParticipants - returns the number of participants (mentors, mentees, or total)
+#
+#	Author - Henry Dang
+#
+#	Last updated: Oct 19 2026
+#
+#	GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
+#	Copyright (C) 2022 Free Software Foundation, Inc.
+#	License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+
+numMentors=$(ls -l ../_mentors | wc -l)
+numMentees=$(ls -l ../_mentees | wc -l)
+if (( $# == 0 )) ; then
+	totalParticipants=$(( "$numMentors" + "$numMentees" ))
+	echo "$totalParticipants"
+elif (( $# == 1 )) ; then
+	if [[ ${1} == 'mentors' ]] ; then
+		echo "$numMentors"
+	elif [[ ${1} == 'mentees' ]] ; then
+		echo "$numMentees"
+	else
+		echo 'Argument was not recognized. Type "mentors" or "mentees".'
+	fi
+else
+	echo 'Incorrect number of arguments. Pass no argument, "mentors" or "mentees".'
+fi

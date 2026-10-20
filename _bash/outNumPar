@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+#  outNumPar - outputs all commands of numPar to a text file 
+#
+#  GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
+#
+#  Author - Henry Dang
+#
+#  Date: Oct. 19, 2026
+
+totalPar=$(bash ./numParticipants)
+numMentors=$(bash ./numParticipants mentors)
+numMentees=$(bash ./numParticipants mentees)
+
+if (($# != 1)) ; then
+	echo "Need one text file as an argument"
+else
+	{
+		echo "Total participants: $totalPar"
+		echo "Total mentors: $numMentors"
+		echo "Total mentees: $numMentees"
+	} > ${1} 2>&1
+fi
