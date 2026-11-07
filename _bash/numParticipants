@@ -10,8 +10,8 @@
 #	License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 
 
-numMentors=$(ls -l ../_mentors | wc -l)
-numMentees=$(ls -l ../_mentees | wc -l)
+numMentors=$(ls ../_mentors | wc -l)
+numMentees=$(ls ../_mentees | wc -l)
 if (( $# == 0 )) ; then
 	totalParticipants=$(( "$numMentors" + "$numMentees" ))
 	echo "$totalParticipants"
